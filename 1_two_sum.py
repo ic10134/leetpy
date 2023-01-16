@@ -25,8 +25,10 @@ def find_combinations(nums, target, start, path, res)->list:
 def twoSum(nums:list, target:int)->list:
     res = []
     find_combinations(nums, target, 0, [], res)
-    res = list(map(lambda x: list(set(x)), res))
-    return res
+    new_res = []
+    for x in res:
+        new_res.append(list(set(x)))
+    return new_res
 
 if __name__ == '__main__':
     nums = ast.literal_eval(input("Enter the elements of the array as list: "))
